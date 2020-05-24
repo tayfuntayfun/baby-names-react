@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import data from './babyNamesData.json';
+import ListBabyNames from './ListBabyNames';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const  App = () => {
+
+  const [names, setName] = useState('')
+  const [babyName, setBabyName] = useState ([])
+
+  const handleChange = e => {
+    setName((e.target.value).toLowerCase())
+  }
+
+  useEffect( () => {
+    setBabyName (data.filter( item => item.name.toLowerCase().includes(names)))
+  }, [names])
+
+    return (
+      <div className="App">
+        {<input className="search-input" label='Search Names' placeholder="Search names" onChange={handleChange}></input> }
+        <ListBabyNames babyNames = {babyName}/>
+        <hr className="line"></hr>
+      </div>
+    );
 }
-
 export default App;
