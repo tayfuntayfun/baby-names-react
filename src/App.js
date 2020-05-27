@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import data from './babyNamesData.json';
 import ListBabyNames from './ListBabyNames';
+import BoySymbol from './babyboysymbol';
+import GirlSymbol from './babygirlsymbol';
+import BoyGirlSymbol from './babyboygirl';
 
 const  App = () => {
 
@@ -18,7 +21,14 @@ const  App = () => {
 
     return (
       <div className="App">
-        {<input className="search-input" label='Search Names' placeholder="Search names" onChange={handleChange}></input> }
+        <div className="nav-bar">
+          <input className="search-input" label='Search Names' placeholder="Search names" onChange={handleChange}></input> 
+          <div  className='baby-icons'>
+            <GirlSymbol data={data} setBabyName={setBabyName}/>
+            <BoySymbol data={data} setBabyName={setBabyName}/>
+            <BoyGirlSymbol data={data} setBabyName={setBabyName}/>
+          </div>
+        </div>
         <ListBabyNames babyNames = {babyName}/>
         <hr className="line"></hr>
       </div>
