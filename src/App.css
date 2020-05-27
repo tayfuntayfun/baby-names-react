@@ -2,12 +2,11 @@
   text-align: center;
   border: 4px solid;
   border-color: #F8BBD0 #90CAF9 #90CAF9 #F8BBD0 ;
-  position: absolute;
   top: 5%;
-  left: 20%;
   width: 60%;
   padding: 30px 20px;
   border-radius: 5px;
+  margin: auto;
 }
 
 .search-input{
