@@ -9,6 +9,12 @@
   margin: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 90%;
+  }
+}
+
 .search-input{
   margin: 10px 20px ;
   padding: 10px 10px;
