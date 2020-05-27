@@ -4,7 +4,7 @@ const ListBabyNames = (props) => {
     return (
         <div className='allBabyNames'>
             {props.babyNames
-                .sort((a, b) => a.name.localeCompare(b.name))
+                .sort((a, b) => a.name > b.name ? 1 : -1 )
                 .map((data, index)=> (
                 <p key={index} className={data.sex}>{data.name}</p>)
                 )

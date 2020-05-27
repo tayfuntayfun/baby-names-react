@@ -26,7 +26,7 @@ const  App = () => {
           <div  className='baby-icons'>
             <GirlSymbol data={data} setBabyName={setBabyName}/>
             <BoySymbol data={data} setBabyName={setBabyName}/>
-            <BoyGirlSymbol data={data} setBabyName={setBabyName}/>
+            <BoySymbol data={data} setBabyName={setBabyName}/>
           </div>
         </div>
         <ListBabyNames babyNames = {babyName}/>
