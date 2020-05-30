@@ -1,35 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import data from './babyNamesData.json';
 import ListBabyNames from './ListBabyNames';
 import BoySymbol from './babyboysymbol';
 import GirlSymbol from './babygirlsymbol';
-import BoyGirlSymbol from './babyboygirl';
+import BabyBoyGirl from './babyboygirl';
 
 const  App = () => {
 
-  const [names, setName] = useState('')
-  const [babyName, setBabyName] = useState ([])
+  const [names, setNames] = useState(data)
 
   const handleChange = e => {
-    setName((e.target.value).toLowerCase())
+    const name = e.target.value.toLowerCase();
+    const filteredNames = data.filter(item => item.name.toLowerCase().includes(name));
+    setNames(filteredNames)
   }
 
-  useEffect( () => {
-    setBabyName (data.filter( item => item.name.toLowerCase().includes(names)))
-  }, [names])
+  const filterByGender = gender => {
+    if(gender.length > 0){
+      const filteredNames = data.filter(item => item.sex === gender)
+      setNames(filteredNames)
+    } else {
+      setNames(data)
+    }
+  }
 
     return (
       <div className="App">
         <div className="nav-bar">
-          <input className="search-input" label='Search Names' placeholder="Search names" onChange={handleChange}></input> 
+          <input className="search-input" label='Search Names' 
+            placeholder="Search names" onChange={handleChange}></input> 
           <div  className='baby-icons'>
-            <GirlSymbol data={data} setBabyName={setBabyName}/>
-            <BoySymbol data={data} setBabyName={setBabyName}/>
-            <BoyGirlSymbol data={data} setBabyName={setBabyName}/>
+            <GirlSymbol data={data} setBabyName={filterByGender}/>
+            <BoySymbol data={data} setBabyName={filterByGender}/>
+            <BabyBoyGirl data={data} setBabyName={filterByGender}/>
           </div>
         </div>
-        <ListBabyNames babyNames = {babyName}/>
+        <ListBabyNames babyNames = {names}/>
         <hr className="line"></hr>
       </div>
     );

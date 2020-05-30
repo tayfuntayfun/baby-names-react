@@ -35,9 +35,13 @@
   display: flex;
   flex-direction: row;
   margin: 0 15px;
-  align-items: center;
-
+  align-items: center
 }
+
+.boy-girl-icon{
+  padding-left: 13px;
+}
+
 .allBabyNames{
   margin: 200px;
   display: flex;
@@ -80,8 +84,8 @@
 
 .nav-bar{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
