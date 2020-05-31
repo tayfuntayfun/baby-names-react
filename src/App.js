@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import data from './babyNamesData.json';
 import ListBabyNames from './ListBabyNames';
-import BoySymbol from './babyboysymbol';
-import GirlSymbol from './babygirlsymbol';
-import BabyBoyGirl from './babyboygirl';
+import BoySymbol from './Babyboysymbol';
+import GirlSymbol from './Babygirlsymbol';
+import BabyBoyGirl from './Babyboygirl';
 
 const  App = () => {
 
@@ -18,8 +18,8 @@ const  App = () => {
 
   const filterByGender = gender => {
     if(gender.length > 0){
-      const filteredNames = data.filter(item => item.sex === gender)
-      setNames(filteredNames)
+      const genderFilteredNames = data.filter(item => item.sex === gender)
+      setNames(genderFilteredNames)
     } else {
       setNames(data)
     }
