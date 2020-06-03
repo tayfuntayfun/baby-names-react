@@ -4,9 +4,9 @@ const ListBabyNames = (props) => {
     return (
         <div className='allBabyNames'>
             {props.babyNames
-                .sort((a, b) => a.name > b.name ? 1 : -1 )
-                .map((data, index)=> (
-                <p key={index} className={data.sex}>{data.name}</p>)
+                .sort((aBaby, bBaby) => aBaby.name > bBaby.name ? 1 : -1 )
+                .map((baby, index)=> (
+                <p key={index} className={baby.sex} onClick={()=>props.addToFavorites(baby)}>{baby.name}</p>)
                 )
             }
         </div>

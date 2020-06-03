@@ -5,10 +5,12 @@ import ListBabyNames from './ListBabyNames';
 import BoySymbol from './Babyboysymbol';
 import GirlSymbol from './Babygirlsymbol';
 import BabyBoyGirl from './Babyboygirl';
+import FavoriteNames from './FavoriteNames';
 
 const  App = () => {
 
   const [names, setNames] = useState(data)
+  const [favoriteNames, setFavoriteNames] = useState([]);
 
   const handleChange = e => {
     const name = e.target.value.toLowerCase();
@@ -25,6 +27,19 @@ const  App = () => {
     }
   }
 
+  const addToFavorites = value => {
+    setFavoriteNames([...favoriteNames, value]);
+    const updatedNames = names.filter(name => name.id !== (value.id));
+    setNames(updatedNames)
+  };
+
+  const removeFromFavorites = value => {
+    const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
+    setFavoriteNames(updatedFavoriteNames);
+    const updatedNames = [...names, value];
+    setNames(updatedNames)
+  };
+
     return (
       <div className="App">
         <div className="nav-bar">
@@ -36,7 +51,11 @@ const  App = () => {
             <BabyBoyGirl data={data} setBabyName={filterByGender}/>
           </div>
         </div>
-        <ListBabyNames babyNames = {names}/>
+        <div>
+          <FavoriteNames addNames={favoriteNames} removeNames={removeFromFavorites} />
+          <hr width='80%' color='blue'/> 
+        </div>
+        <ListBabyNames babyNames = {names} addToFavorites={addToFavorites}/>
         <hr className="line"></hr>
       </div>
     );

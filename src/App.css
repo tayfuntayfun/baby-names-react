@@ -7,6 +7,7 @@
   padding: 30px 20px;
   border-radius: 5px;
   margin: auto;
+  font-family: 'Patrick Hand', cursive; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,6 +52,36 @@
   flex-wrap: wrap;
 }
 
+hr {
+  background-color: rgb(0, 195, 255) ;
+  border: none;
+  display: block;
+  height: 2px;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+hr:before {
+  background-color:#F8BBD0 ;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  z-index: 1;
+}
+
+span{
+  font-family: 'Patrick Hand', cursive;
+  font-size: 30px;
+  text-shadow: royalblue;
+  margin-right: 10px;
+  font-family: 'Sriracha', cursive;
+}
+
 .f/*female*/{
   background-color: #F8BBD0;
   width: fit-content;
@@ -60,7 +91,8 @@
   font-weight: bolder;
   margin: 5px;
   font-size: 19px;
-  padding: 2px 8px; 
+  padding: 2px 8px;
+  
 }
 
 .m/*male*/{
