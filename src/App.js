@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import data from './babyNamesData.json';
 import ListBabyNames from './ListBabyNames';
-import BoySymbol from './Babyboysymbol';
-import GirlSymbol from './Babygirlsymbol';
+import BoySymbol from './BoySymbol';
+import GirlSymbol from './GirlSymbol';
 import BabyBoyGirl from './Babyboygirl';
 import FavoriteNames from './FavoriteNames';
 
@@ -29,15 +29,15 @@ const  App = () => {
 
   const addToFavorites = value => {
     setFavoriteNames([...favoriteNames, value]);
-    const updatedNames = names.filter(name => name.id !== (value.id));
-    setNames(updatedNames)
+    // const updatedNames = names.filter(name => name.id !== (value.id));  IF YOU WANT TO REMOVE/ADD FAVORITES FROM THE VISUALISED NAMES
+    // setNames(updatedNames)
   };
 
   const removeFromFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    const updatedNames = [...names, value];
-    setNames(updatedNames)
+    // const updatedNames = [...names, value];  IF YOU WANT TO REMOVE/ADD FAVORITES FROM THE VISUALISED NAMES
+    // setNames(updatedNames)
   };
 
     return (
