@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ListBabyNames = (props) => { 
+const ListBabyNames = (props) => {
+    
     return (
         <div className='allBabyNames'>
             {props.babyNames

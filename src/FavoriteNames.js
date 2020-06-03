@@ -4,7 +4,7 @@ const FavoriteNames = (props) => {
     return (
         <div>
             <div className="favorites">
-            <span>Favorite Names</span>
+            <span>Favorite Names :</span>
             {props.addNames.map((name) => (
                 <span
                 key={name.id}
