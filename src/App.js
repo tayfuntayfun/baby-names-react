@@ -29,15 +29,11 @@ const  App = () => {
 
   const addToFavorites = value => {
     setFavoriteNames([...favoriteNames, value]);
-    // const updatedNames = names.filter(name => name.id !== (value.id));  IF YOU WANT TO REMOVE/ADD FAVORITES FROM THE VISUALISED NAMES
-    // setNames(updatedNames)
   };
 
   const removeFromFavorites = value => {
     const updatedFavoriteNames = favoriteNames.filter(name => name.id !== value.id);
     setFavoriteNames(updatedFavoriteNames);
-    // const updatedNames = [...names, value];  IF YOU WANT TO REMOVE/ADD FAVORITES FROM THE VISUALISED NAMES
-    // setNames(updatedNames)
   };
 
     return (
