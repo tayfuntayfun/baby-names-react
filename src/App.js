@@ -4,7 +4,7 @@ import data from './babyNamesData.json';
 import ListBabyNames from './ListBabyNames';
 import BoySymbol from './BoySymbol';
 import GirlSymbol from './GirlSymbol';
-import BabyBoyGirl from './Babyboygirl';
+import BabyBoyGirl from './Boygirlcon';
 import FavoriteNames from './FavoriteNames';
 
 const  App = () => {
